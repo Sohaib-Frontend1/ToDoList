@@ -3,10 +3,11 @@
 A simple, responsive To-Do List application to help you manage daily tasks. 
 All data is saved locally in the browser using LocalStorage.
 
+
 ## Features
 
 - **Add Tasks**: Create new tasks instantly
-- **Mark as Complete**: Toggle tasks between complete and incomplete
+- **Mark as Complete**: Toggle tasks between complete and incomplete  
 - **Delete Tasks**: Remove tasks you no longer need
 - **Data Persistence**: Tasks are saved in LocalStorage and persist after page reload
 - **Responsive Design**: Works on desktop, tablet, and mobile
@@ -15,11 +16,20 @@ All data is saved locally in the browser using LocalStorage.
 ## Tech Stack
 
 - HTML5
-- CSS3 with Flexbox
+- CSS3 with Flexbox and Grid
 - Vanilla JavaScript
 - Browser LocalStorage API
+## Live Demo
 
-## How to Run
+You can try the app here: [https://muhammad-front-enddeveloper.github.io/ToDoList](https://muhammad-front-enddeveloper.github.io/ToDoList)
 
-1. Open the project on GitHub pages on this link: https://muhammad-front-enddeveloper.github.io/ToDoList
-2. Add Tasks, Delete tasks you don't need, Write notes, Mark tasks you did.
+## How to Use
+
+1. Type your task in the input field and press `Enter` or click `Add`
+2. Click on a task to mark it as complete
+3. Click the delete icon to remove a task
+4. Your tasks will be saved automatically
+
+## License
+
+This project is licensed under the MIT License.
