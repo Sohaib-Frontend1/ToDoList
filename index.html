@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To-Do List</title>
+        <link rel="icon" href="./notebook.jpg" type="image/jpg">
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="app">
+            <h1>My To-Do List</h1>
+            <div class="input-box">
+                <input type="text" id="taskInput" placeholder="Enter a task" />
+                <button id="addBtn">Add Task</button>
+            </div>
+            <p id="message"></p>
+            <div class="list-top">
+                <p>Total tasks: <span id="taskCount">0</span></p>
+                <button onclick="deleteAll()">Delete All</button>
+            </div>
+            <ol id="taskList"></ol>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

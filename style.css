@@ -1,0 +1,106 @@
+:root {
+    --main-color: #2563EB;
+    --bg-color: #F8F9FA;
+    --border-color: #E5E7EB;
+}
+
+body {
+    background-color: var(--bg-color, #F8F9FA);
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; */
+}
+
+.app {
+    background-color: #fff;
+    height: fit-content;
+    width: fit-content;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 70px auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1, p#message {
+    color: var(--main-color, #2563EB);
+}
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+input, button {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+input {
+    outline: none;
+    border-style: solid;
+    border-color: var(--border-color, #E5E7EB);
+}
+
+button {
+    background-color: var(--main-color, #2563EB);
+    color: #fff;
+    border: none;
+    width: fit-content;
+    cursor: pointer;
+}
+
+ol li {
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+ol li span {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+ol li input {
+    margin-left: 0;
+}
+
+ol li button, .list-top button {
+    margin-left: 0;
+    margin-bottom: 0;
+    background: #ff4d4d;
+}
+
+ol li button:hover, .list-top button:hover {
+    background: #e60000;
+}
+
+li.done span {
+    text-decoration: line-through;
+    color: #1d4c7cff;
+    opacity: 0.6;
+    background-color: #c1d6ec;
+}
+
+li.done input {
+    opacity: .5;
+    background-color: #f0f0f0;
+}
+
+.list-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-top button {
+    padding: 10px;
+    height: fit-content;
+    margin: auto 0;
+}
