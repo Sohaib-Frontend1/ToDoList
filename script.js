@@ -5,11 +5,24 @@ let taskInput = document.getElementById("taskInput"),
     taskList = document.getElementById("taskList");
 
 let tasks = [],
-    
     savedTasks = localStorage.getItem("tasks");
 
 if (savedTasks !== null) {
     tasks = JSON.parse(savedTasks);
+}
+
+let msgTimeout;
+
+function showMsg(msg, isError) {
+    clearTimeout(msgTimeout);
+
+    message.textContent = msg;
+    message.style.color = isError ? "#ff4d4d" : "#facc15";
+
+    msgTimeout = setTimeout(() => {
+        message.textContent = "";
+        message.style.color = "";
+    }, 5000);
 }
 
 function saveTasks() {
@@ -18,55 +31,54 @@ function saveTasks() {
 
 function displayTasks() {
     taskList.innerHTML = "";
-    tasks.forEach(function(task, index) {
+    tasks.forEach(function (task, index) {
         let li = document.createElement("li");
-        
+
         if (task.done) {
-          li.classList.add("done");          
+            li.classList.add("done");
         }
-            
+
         let taskSpan = document.createElement("span");
         taskSpan.textContent = task.text;
-        
+
         let noteInput = document.createElement("input");
         noteInput.type = "text";
         noteInput.placeholder = "Add a Note";
         noteInput.value = task.note || "";
         // noteInput.readOnly = task.done;
-        noteInput.oninput = function() {
+        noteInput.oninput = function () {
             tasks[index].note = noteInput.value;
             saveTasks();
-        }
-        
+        };
+
         let deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
-        deleteBtn.onclick = function() {
+        deleteBtn.onclick = function () {
             tasks.splice(index, 1);
 
             saveTasks();
             displayTasks();
-            
-            message.textContent = "Task Deleted";
-            setTimeout(() => message.textContent = "", 5000);
+
+            showMsg("Task Deleted Successfully", false);
         };
-        
+
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.checked = task.done;
-        checkbox.onchange = function() {
+        checkbox.onchange = function () {
             tasks[index].done = checkbox.checked;
             saveTasks();
             displayTasks();
-        }
-        
+        };
+
         noteInput.readOnly = checkbox.checked;
-        
+
         if (checkbox.checked) {
             li.classList.add("done");
         } else {
             li.classList.remove("done");
         }
-        
+
         li.appendChild(checkbox);
         li.appendChild(taskSpan);
         li.appendChild(noteInput);
@@ -75,42 +87,43 @@ function displayTasks() {
     });
 
     taskCount.textContent = tasks.length;
-    
 }
 
-addBtn.addEventListener("click", function() {
+addBtn.addEventListener("click", function () {
     let taskText = taskInput.value.trim();
-    
+
     if (taskText === "") {
-        message.textContent = "Please Enter New Task";
-        setTimeout(() => message.textContent = "", 5000);
+        showMsg("Please Enter New Task", true);
         return;
     }
-    
+
     let newTask = {
         text: taskText,
         note: "",
         done: false
-    }
-    
+    };
+
     tasks.push(newTask);
-    
+
     saveTasks();
     displayTasks();
-    
-    message.textContent = "Task Added Successfully";
-    setTimeout(() => message.textContent = "", 5000);
+
+    showMsg("Task Added Successfully", false);
     taskInput.value = "";
 });
 
 function deleteAll() {
+    if (tasks.length === 0) {
+        showMsg("No items to delete", true);
+        return;
+    }
+
     tasks = [];
 
     saveTasks();
     displayTasks();
-    
-    message.textContent = "All Tasks Deleted Successfully";
-    setTimeout(() => message.textContent = "", 5000);
+
+    showMsg("All Tasks Deleted Successfully", false);
 }
 
 displayTasks();
