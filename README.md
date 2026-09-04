@@ -1,35 +1,30 @@
 # To-Do List App
 
-A simple, responsive To-Do List application to help you manage daily tasks. 
-All data is saved locally in the browser using LocalStorage.
+A clean to-do app I built with vanilla HTML, CSS, and JavaScript. 
+No frameworks, no backend. It saves your tasks in the browser using localStorage, so they’re still there when you come back.
 
+### Features
+- Add, complete, and delete tasks
+- Add an optional note to each task
+- Mark tasks as complete with a strikethrough
+- Clear all tasks with one click
+- Auto-save to localStorage
+- Responsive design with a clean dark UI
+- Works on desktop and mobile
 
-## Features
+### Tech Stack
+- **HTML5**
+- **CSS3** - Flexbox, and Media Queries
+- **Vanilla JavaScript ES6** - DOM manipulation, Events
+- **Browser LocalStorage API** - for data persistence
 
-- **Add Tasks**: Create new tasks instantly
-- **Mark as Complete**: Toggle tasks between complete and incomplete  
-- **Delete Tasks**: Remove tasks you no longer need
-- **Data Persistence**: Tasks are saved in LocalStorage and persist after page reload
-- **Responsive Design**: Works on desktop, tablet, and mobile
-- **Clean UI**: Minimal and easy to use interface
+### Live Demo
+[Try it here](https://Sohaib-frontend1.github.io/ToDoList)
 
-## Tech Stack
+### How to Use
+1. Type your task and press `Enter` or click `Add`
+2. Click the task to mark it complete
+3. Click the delete icon to remove it
 
-- HTML5
-- CSS3 with Flexbox and Grid
-- Vanilla JavaScript
-- Browser LocalStorage API
-## Live Demo
-
-You can try the app here: [https://muhammad-front-enddeveloper.github.io/ToDoList](https://muhammad-front-enddeveloper.github.io/ToDoList)
-
-## How to Use
-
-1. Type your task in the input field and press `Enter` or click `Add`
-2. Click on a task to mark it as complete
-3. Click the delete icon to remove a task
-4. Your tasks will be saved automatically
-
-## License
-
+### License
 This project is licensed under the MIT License.
