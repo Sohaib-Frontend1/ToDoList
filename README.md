@@ -28,3 +28,6 @@ No frameworks, no backend. It saves your tasks in the browser using localStorage
 
 ### License
 This project is licensed under the MIT License.
+
+### Screenshot
+![App Screenshot](./AnImage.jpg)
