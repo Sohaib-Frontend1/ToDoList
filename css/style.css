@@ -1,0 +1,182 @@
+:root {
+    --main: #2563eb;
+    --bg: #161817;
+    --border: #e5e7eb;
+    --delete: #f50f0fbd;
+    --dlt-btn-hvr: #e60000;
+    font-size: clamp(14px, 5vw, 20px);
+}
+
+* {
+    color: #fff;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+body {
+    background-color: var(--bg);
+    font-family: "Open Sans", sans-serif;
+}
+
+.app {
+    background-color: #0d0d0d;
+    height: fit-content;
+    width: 70vw;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 70px auto;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--main);
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+button {
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1rem;
+}
+
+input {
+    outline: none;
+    border-style: solid;
+    border-color: var(--border, #e5e7eb);
+    background-color: var(--bg);
+}
+
+button {
+    background-color: var(--main, #2563eb);
+    color: #fff;
+    border: none;
+    width: fit-content;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button#addBtn {
+    width: 50%;
+    margin: 15px auto;
+    max-width: 800px;
+}
+
+p#message {
+    color: var(--delete);
+    height: 35px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-weight: 600;
+}
+
+.total {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #facc15;
+}
+
+#taskCount {
+    color: var(--main);
+}
+
+ol li {
+    background-color: var(--bg);
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+ol li span {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+ol li input {
+    margin-left: 0;
+}
+ol li button {
+    margin-left: 90%;
+    transform: translateX(-50%);
+}
+
+ol li button,
+.list-top button {
+    /* margin-left: 0;
+    margin-bottom: 0; */
+    background-color: var(--delete);
+}
+
+ol li button:hover{
+    transform: translateX(-50%) scale(1.15);
+}
+
+.list-top button:hover {
+    transform: scale(1.15);
+}
+
+ol li button:hover,
+.list-top button:hover {
+    background-color: var(--dlt-btn-hvr);
+}
+
+li.done span {
+    text-decoration: line-through;
+    color: #facc12;
+    opacity: 0.6;
+    background-color: hsl(0deg 0% 100% / 35%);
+	font-weight: 500;
+}
+
+li.done input {
+    opacity: 0.5;
+    background-color: #f0f0f0;
+    color: var(--bg);
+}
+
+.list-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-top button {
+    padding: 10px;
+    height: fit-content;
+    margin: auto 0;
+}
+
+@media (max-width: 768px) {
+    .app {
+        padding: 10px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        white-space: nowrap;
+    }
+
+    p#message {
+        white-space: nowrap;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    ol li button {
+        margin-left: 85%;
+    }
+}
